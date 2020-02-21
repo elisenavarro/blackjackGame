@@ -22,20 +22,23 @@ namespace blackjackGame
         bool response = true;
         string isValidResponse = Console.ReadLine().ToLower();
         // Loop while correct response returned
-        if(isValidResponse == "y" || isValidResponse == "yes")
+        while (response)
         {
-          playing = true;
-          response = false;
-        }
-        else if (isValidResponse == "n" || isValidResponse == "no")
-        {
-          playing = false;
-          response = false;
-        }
-        else
-        {
-          Console.Write("Invalid Input. Enter 'Y' or 'N'");
-          isValidResponse = Console.ReadLine();
+          if(isValidResponse == "y" || isValidResponse == "yes")
+          {
+            playing = true;
+            response = false;
+          }
+          else if (isValidResponse == "n" || isValidResponse == "no")
+          {
+            playing = false;
+            response = false;
+          }
+          else
+          {
+            Console.Write("Invalid Input. Enter 'Y' or 'N'");
+            isValidResponse = Console.ReadLine();
+          }
         }
       }
       Console.Clear();
