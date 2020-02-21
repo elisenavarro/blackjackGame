@@ -3,7 +3,8 @@ using System.Collections.Generic;
 
 class Card
 {
-  private readonly Random randomCard = new Random(DateTime.Now);
+  //
+  private readonly Random randCard = new Random(DateTime.Now.Millisecond);
   public List<string> Deck = new List<string>();
 
   // List all possible card values
@@ -33,18 +34,22 @@ class Card
       "Hearts",
       "Clubs"
     };
-    foreach (string suit in suits)
+    // For each element in values & suit instane add to deck
+    foreach (string value in values)
     {
+      foreach (string suit in suits)
+      {
         Deck.Add($"{value} of {suit}");
+      }
     }
   }
 
   public int DealCard(bool secret)
   {
     int value = 0;
-    int randomCard = randomCard.Next(Deck.Count);
-    string card = Deck[randomCard];
-    Deck.RemoveCardAt(randomCard); // remove drawn card from deck
+    int randomCard = randCard.Next(Deck.Count);
+    string card = Deck[randomCard]; // card = Deck[index] of randomCard
+    Deck.RemoveAt(randomCard); // remove drawn card from deck
 
     if (!secret)
     {
