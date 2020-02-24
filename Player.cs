@@ -58,7 +58,7 @@ class Player // set the player
   // Update the value of Ace card
   public void UpdateAces()
   {
-    while (!Over && hand.Constains(11)) // Ace value = 11
+    while (!Over && hand.Contains(11)) // Ace value = 11
     {
       hand[hand.FindIndex(index => index.Equals(11))] = 1; // update Ace value to 1
       CheckOverTwentyOne();

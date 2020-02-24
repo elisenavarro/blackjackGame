@@ -8,3 +8,4 @@
 /Users/elisenavarro/code/elisenavarro/blackjackGame/obj/Debug/netcoreapp3.1/blackjackGame.AssemblyInfo.cs
 /Users/elisenavarro/code/elisenavarro/blackjackGame/obj/Debug/netcoreapp3.1/blackjackGame.dll
 /Users/elisenavarro/code/elisenavarro/blackjackGame/obj/Debug/netcoreapp3.1/blackjackGame.pdb
+/Users/elisenavarro/code/elisenavarro/blackjackGame/bin/Debug/netcoreapp3.1/blackjackGame.dll.config
