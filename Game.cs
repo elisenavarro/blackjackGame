@@ -130,24 +130,24 @@ class Game
   void CompareCards() // method does not have a return value
   {
     if (player.total > 21)
-        player.total = 0;
+        player.total = 0; // if player is over 21
     if (dealer.total > 21)
-        dealer.total = 0;
-    if (player.total > dealer.total)
+        dealer.total = 0; // if dealer is over 21
+    if (player.total > dealer.total) // compare totals
     {
-      status = (byte)Status.PlayerWin;
+      status = Status.PlayerWin;
     }
     else if (dealer.total > player.total)
     {
-      status = (byte)Status.DealerWin;
+      status = Status.DealerWin;
     }
     else
     {
-      status = (byte)Status.Draw;
+      status = Status.Draw;
     }
     if (player.Over && dealer.Over)
     {
-      status = (byte)Status.Draw;
+      status = Status.Draw;
     }
   }
 }
