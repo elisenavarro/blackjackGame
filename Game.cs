@@ -13,7 +13,7 @@ enum Status
 
 class Game
 {
-  Status status = Status.GameOn; //set start of game
+  byte status = (byte)Status.GameOn; //set start of game
   Dealer dealer = new Dealer(); //new instance of Dealer
   Player player = new Player(""); //new instance of player
   Card deck = new Card(); // new deck
@@ -23,7 +23,7 @@ class Game
     player.CheckOverTwentyOne();
     if (!player.Over)
     {
-      Console.Write("{0} Call", player.Name);
+      Console.Write("{0}", player.Name);
       player.hand.Add(deck.DealCard(false));
       player.GetTotal();
     }
@@ -37,7 +37,7 @@ class Game
     dealer.CheckOverTwentyOne();
     if (!dealer.Over)
     {
-      Console.Write("The Dealers Call");
+      Console.Write("The Dealer");
       dealer.hand.Add(deck.DealCard(false));
       Console.WriteLine("Dealer gets second card");
       dealer.hand.Add(deck.DealCard(true));
@@ -68,8 +68,8 @@ class Game
     //Player Wins if Cards = 21
     if (player.HasBlackjack() == true) // Est in Player Class
     {
-      Console.WriteLine($"Congrats {player.Name} you've got a Blackjack!");
-      byte status = (byte)Status.blackjack;
+      Console.WriteLine($"Congrats {player.Name} you got Blackjack! You Won!");
+      status = (byte)Status.Blackjack;
     }
     else
     {
@@ -101,26 +101,26 @@ class Game
       }
     if (player.Over)
     {
-      Console.Write("{0}'s cards are {1} so its a bust", player.Name, player.total);
+      Console.WriteLine("{0}'s cards are {1} so its a bust", player.Name, player.total);
     }
     DealerCall();
     }
   }
   //Return Winner
-  public void GetWinner() // method does not have a return value
+  public void GetWinner() // method does not require a return value
   {
     switch (status) // alternative to if..else
     {
-      case Status.PlayerWin:
+      case (byte)Status.PlayerWin:
         Console.WriteLine($"{player.Name} Won!");
         break;
-      case Status.DealerWin:
+      case (byte)Status.DealerWin:
         Console.WriteLine("Dealer Won");
         break;
-      case Status.Draw:
+      case (byte)Status.Draw:
         Console.WriteLine("It's a draw");
         break;
-      case Status.Blackjack:
+      case (byte)Status.Blackjack:
         Console.WriteLine($"{player.Name} got Blackjack!");
         break;
     }
