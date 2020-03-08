@@ -135,19 +135,19 @@ class Game
         dealer.total = 0; // if dealer is over 21
     if (player.total > dealer.total) // compare totals
     {
-      status = Status.PlayerWin;
+      status = (byte)Status.PlayerWin;
     }
     else if (dealer.total > player.total)
     {
-      status = Status.DealerWin;
+      status = (byte)Status.DealerWin;
     }
     else
     {
-      status = Status.Draw;
+      status = (byte)Status.Draw;
     }
     if (player.Over && dealer.Over)
     {
-      status = Status.Draw;
+      status = (byte)Status.Draw;
     }
   }
 }
